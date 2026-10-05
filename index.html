@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mural de Estágios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="barra">
+    <span class="logo">MURAL/ESTÁGIOS</span>
+    <a href="#vagas">Ver vagas</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-texto">
+      <p class="selo">Vagas de estágio · grátis</p>
+      <h1>Publique a vaga.<br>Encontre quem <mark>começa</mark> agora.</h1>
+      <p class="subtitulo">Cadastre em menos de um minuto e sua oportunidade entra direto no mural.</p>
+      <a href="#cadastro" class="botao">Cadastrar vaga →</a>
+    </div>
+    <div class="hero-bloco" aria-hidden="true">
+      <span>01</span>
+      <span>02</span>
+      <span>03</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="cadastro" class="painel">
+      <h2>1. Cadastre a vaga</h2>
+      <form id="form-vaga">
+        <div class="campo">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" required maxlength="60" placeholder="Nome da empresa">
+        </div>
+        <div class="campo">
+          <label for="cargo">Vaga</label>
+          <input type="text" id="cargo" required maxlength="60" placeholder="Ex.: Estágio em Marketing">
+        </div>
+        <div class="campo">
+          <label for="modalidade">Modalidade</label>
+          <select id="modalidade" required>
+            <option value="Presencial">Presencial</option>
+            <option value="Híbrido">Híbrido</option>
+            <option value="Remoto">Remoto</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="local">Cidade / UF</label>
+          <input type="text" id="local" required maxlength="40" placeholder="Fortaleza / CE">
+        </div>
+        <div class="campo">
+          <label for="bolsa">Bolsa-auxílio (R$)</label>
+          <input type="number" id="bolsa" min="0" step="50" placeholder="1200">
+        </div>
+        <div class="campo">
+          <label for="prazo">Inscrições até</label>
+          <input type="date" id="prazo" required>
+        </div>
+        <div class="campo largo">
+          <label for="contato">Link ou e-mail para candidatura</label>
+          <input type="text" id="contato" required maxlength="120" placeholder="https://empresa.com/vagas ou rh@empresa.com">
+        </div>
+        <div class="campo largo">
+          <button type="submit" class="botao">Publicar vaga →</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="vagas" class="painel">
+      <div class="topo-tabela">
+        <h2>2. Vagas abertas <span id="contador">0</span></h2>
+        <input type="search" id="busca" placeholder="Buscar empresa, vaga ou cidade">
+      </div>
+
+      <div class="rolagem">
+        <table>
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Vaga</th>
+              <th>Modalidade</th>
+              <th>Local</th>
+              <th>Bolsa</th>
+              <th>Prazo</th>
+              <th>Candidatura</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+      <p id="vazio" class="vazio">Nenhuma vaga por aqui ainda. Cadastre a primeira.</p>
+    </section>
+  </main>
+
+  <footer>Mural de Estágios © 2026</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
